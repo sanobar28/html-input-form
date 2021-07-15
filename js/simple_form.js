@@ -32,6 +32,19 @@ email.addEventListener('input', function () {
     }
 });
 
+//UC3-validate mobile number
+const tel = document.querySelector('#tel');
+const telError = document.querySelector('.tel-error');
+tel.addEventListener('input', function () {
+    let telRegex = RegExp('^[1-9]{2}[ ][0-9]{10}$');
+    if (telRegex.test(tel.value)) {
+        telError.textContent = "";
+    }
+    else {
+        telError.textContent = "telephone number is not Valid";
+    }
+});
+
 
 //salary range button synchronised with values of user
 const salary = document.querySelector('#salary');
