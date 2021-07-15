@@ -8,15 +8,9 @@ const text  = document.querySelector('#text');
 const textError = document.querySelector('.text-error');
 let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
 text.addEventListener('input', function() {
-    
-    if (text.value.length == 0) {
-        textError.textContent = '';
-    }
-    if(nameRegex.test(text.value)){
-        textError = '';
-    }else{
-        textError.textContent = "Name in incorrect";
-    }
+    if (nameRegex.test(text.value))
+        textError.textContent = "";
+    else textError.textContent = "Name is Incorrect";
 })
 
 //UC2 email validation
